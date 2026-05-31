@@ -1,0 +1,41 @@
+{
+  "name": "chat-ia-integrator",
+  "version": "1.0.0",
+  "description": "Projeto de integração com IA do Gemini, CI/CD e testes automatizados",
+  "main": "src/app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UelintonHJ/chat-ia-integrator.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "gemini",
+    "jest",
+    "github-actions"
+  ],
+  "author": "Uelinton Janke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UelintonHJ/chat-ia-integrator/issues"
+  },
+  "homepage": "https://github.com/UelintonHJ/chat-ia-integrator#readme",
+  "dependencies": {
+    "@google/genai": "^2.7.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14"
+  }
+}
