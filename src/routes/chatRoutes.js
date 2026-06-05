@@ -1,18 +1,11 @@
 const express = require("express");
+
 const router = express.Router();
 
-router.post("/", (req, res) => {
-    const { prompt } = req.body;
+const {
+    sendMessage
+} = require("../controllers/chatController");
 
-    if (!prompt) {
-        return res.status(400).json({
-            error: "Prompt não pode ser vazio"
-        });
-    }
-
-    return res.json({
-        answer: "Respota temporária do sistema (mock)"
-    });
-});
+router.post("/", sendMessage);
 
 module.exports = router;
