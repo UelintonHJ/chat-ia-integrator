@@ -1,4 +1,4 @@
-const { sendPromptGemini, sendPromptToGemini } = require("../services/geminiService");
+const { sendPromptToGemini } = require("../services/geminiService");
 
 async function sendMessage(req, res) {
     try {
@@ -19,8 +19,20 @@ async function sendMessage(req, res) {
     } catch (error) {
         console.error(error);
 
+        if (error.status === 429) {
+            return res.status(429).json({
+                error: "A API do Gemini atingiu o limite de uso da cota diária gratuita. Tente novamente mais tarde."
+            })
+        }
+
+        if (error.status === 503) {
+            return res.status(503).json({
+                error: "A IA está temporariamente indisponível. Tente novamente em alguns instantes."
+            });
+        }
+
         return res.status(500).json({
-            error: "Erro ao processar a solicitação."
+            error: "Erro interno do servidor."
         });
     }
 }

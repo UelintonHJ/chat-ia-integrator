@@ -10,6 +10,7 @@ sendButton.addEventListener("click", async () => {
         return;
     }
 
+    sendButton.disabled = true;
     responseArea.textContent = "Pensando...";
 
     try {
@@ -25,13 +26,15 @@ sendButton.addEventListener("click", async () => {
 
         const data = await response.json();
 
-        responseArea.textContent = 
-            data.answer || data.error;
+        if(!response.ok) {
+            throw new Error(data.error);
+        }
+
+        responseArea.textContent = data.answer || data.error;
             
     } catch (error) {
-        responseArea.textContent = 
-            "Erro ao conectar com o servidor.";
-
-        console.error(error);
+        responseArea.textContent = error.message;
+    } finally {
+        sendButton.disabled = false;
     }
 });

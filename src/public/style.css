@@ -6,11 +6,11 @@
 
 body {
     font-family: "Inter", sans-serif;
-    background-color: linear-gradient(135deg, #1f2937, #111827);
+    background: linear-gradient(135deg, #1f2937, #111827);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
 }
 
@@ -72,11 +72,22 @@ button {
     color: white;
     font-size: 16px;
     font-weight: 600;
+    transition: 0.2s;
 }
 
 button:hover {
     background-color: #1d4ed8;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+    transform: none;
 }
 
 h2 {
@@ -86,12 +97,16 @@ h2 {
 }
 
 #response {
-    min-height: 140px;
+    min-height: 150px;
+    max-height: 300px;
     border: 1px solid #e5e7eb;
     padding: 14px;
     border-radius: 10px;
     background-color: #f9fafb;
     white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: auto;
     line-height: 1.6;
     color: #1f2937;
 }
