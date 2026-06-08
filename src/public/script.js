@@ -3,14 +3,14 @@ const sendButton = document.getElementById("sendButton");
 const responseArea = document.getElementById("response");
 
 sendButton.addEventListener("click", async () => {
-    const prompt = promptInput.ariaValueMax.trim();
+    const prompt = promptInput.value.trim();
 
     if (!prompt) {
         responseArea.textContent = "Digite um prompt.";
         return;
     }
 
-    responseArea.textContent = "Carregando...";
+    responseArea.textContent = "Pensando...";
 
     try {
         const response = await fetch("/chat", {
@@ -32,6 +32,6 @@ sendButton.addEventListener("click", async () => {
         responseArea.textContent = 
             "Erro ao conectar com o servidor.";
 
-        console.error(erro);
+        console.error(error);
     }
 });
