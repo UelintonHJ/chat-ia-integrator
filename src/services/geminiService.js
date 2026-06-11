@@ -1,4 +1,5 @@
 const { GoogleGenAI } = require("@google/genai");
+const { GEMINI_MODEL } = require("../constants/gemini");
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY
@@ -6,7 +7,7 @@ const ai = new GoogleGenAI({
 
 async function sendPromptToGemini(prompt) {
     const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: GEMINI_MODEL,
         contents: prompt
     });
 

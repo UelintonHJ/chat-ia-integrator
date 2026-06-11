@@ -1,14 +1,12 @@
 const { sendPromptToGemini } = require("../services/geminiService");
+const { validatePrompt } = require("../utils/chatValidation")
+const { ERROR_MESSAGES } = require("../constants/messages")
 
 async function sendMessage(req, res) {
     try {
         const { prompt } = req.body;
 
-        if (!prompt || prompt.trim() === "") {
-            return res.status(400).json({
-                error: "O prompt não pode estar vazio."
-            });
-        }
+        validatePrompt(prompt);
 
         const answer = await sendPromptToGemini(prompt);
 
@@ -19,20 +17,26 @@ async function sendMessage(req, res) {
     } catch (error) {
         console.error(error);
 
+        if (error.message === ERROR_MESSAGES.EMPTY_PROMPT) {
+            return res.status(400).json({
+                error: ERROR_MESSAGES.EMPTY_PROMPT
+            });
+        }
+
         if (error.status === 429) {
             return res.status(429).json({
-                error: "A API do Gemini atingiu o limite de uso da cota diária gratuita. Tente novamente mais tarde."
+                error: ERROR_MESSAGES.QUOTA_EXCEEDED
             })
         }
 
         if (error.status === 503) {
             return res.status(503).json({
-                error: "A IA está temporariamente indisponível. Tente novamente em alguns instantes."
+                error: ERROR_MESSAGES.SERVICE_UNAVAILABLE
             });
         }
 
         return res.status(500).json({
-            error: "Erro interno do servidor."
+            error: ERROR_MESSAGES.INTERNAL_SERVER_ERROR
         });
     }
 }
