@@ -2,7 +2,9 @@ async function sendPromptToOllama(prompt) {
     try {
         console.log("Chamando Ollama com prompt:", prompt);
 
-        const response = await fetch("http://localhost:11434/api/generate", {
+        const OLLAMA_URL = process.env.OLLAMA_URL || "http://localhost:11434";
+
+        const response = await fetch(`${OLLAMA_URL}/api/generate`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

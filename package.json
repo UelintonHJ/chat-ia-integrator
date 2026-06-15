@@ -1,7 +1,7 @@
 {
   "name": "chat-ia-integrator",
   "version": "1.0.0",
-  "description": "Projeto de integração com IA do Gemini, CI/CD e testes automatizados",
+  "description": "Projeto de integração com IA local utilizando Ollama",
   "main": "src/app.js",
   "directories": {
     "test": "tests"
@@ -18,8 +18,10 @@
   "keywords": [
     "node",
     "express",
-    "gemini",
+    "ollama",
+    "llama3",
     "jest",
+    "docker",
     "github-actions"
   ],
   "author": "Uelinton Janke",
