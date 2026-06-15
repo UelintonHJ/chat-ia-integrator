@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/UelintonHJ/chat-ia-integrator#readme",
   "dependencies": {
-    "@google/genai": "^2.7.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"

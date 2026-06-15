@@ -1,6 +1,6 @@
-const { sendPromptToGemini } = require("../services/geminiService");
-const { validatePrompt } = require("../utils/chatValidation")
-const { ERROR_MESSAGES } = require("../constants/messages")
+const { sendPromptToOllama } = require("../services/ollamaService");
+const { validatePrompt } = require("../utils/chatValidation");
+const { ERROR_MESSAGES } = require("../constants/messages");
 
 async function sendMessage(req, res) {
     try {
@@ -8,7 +8,7 @@ async function sendMessage(req, res) {
 
         validatePrompt(prompt);
 
-        const answer = await sendPromptToGemini(prompt);
+        const answer = await sendPromptToOllama(prompt);
 
         return res.status(200).json({
             answer
@@ -29,7 +29,7 @@ async function sendMessage(req, res) {
             })
         }
 
-        if (error.status === 503) {
+        if (error.message.includes("fetch")) {
             return res.status(503).json({
                 error: ERROR_MESSAGES.SERVICE_UNAVAILABLE
             });

@@ -3,10 +3,10 @@ const ERROR_MESSAGES = {
         "O prompt não pode estar vazio.",
 
     QUOTA_EXCEEDED:
-        "A API do Gemini atingiu o limite de uso da cota diária gratuita. Tente novamente mais tarde.",
+        "Ollama não está respondendo ou atingiu limite local.",
 
     SERVICE_UNAVAILABLE:
-        "A IA está temporariamente indisponível. Tente novamente em alguns instantes.",
+        "IA local não está rodando (Ollama).",
 
     INTERNAL_SERVER_ERROR:
         "Erro interno do servidor."
