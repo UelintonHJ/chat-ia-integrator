@@ -124,3 +124,10 @@ h2 {
     line-height: 1.6;
     color: #1f2937;
 }
+
+.footer-info {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b7280;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GemChat</title>
+    <title>LlamaChat</title>
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
         </h1>
 
         <p class="subtitle">
-            Converse com a Inteligência Artificial
+            Converse com uma IA local utilizando Ollama e Llama 3
         </p>
 
         <label for="prompt">
@@ -26,7 +26,7 @@
 
         <textarea 
             id="prompt"
-            placeholder="Exemplo: Explique o que é SOLID."
+            placeholder="Digite aqui sua pergunta para a IA..."
         ></textarea>
 
         <button id="sendButton">
@@ -37,7 +37,11 @@
             Resposta
         </h2>
 
-        <div id="response">A resposta aparecerá aqui.</div>
+        <div id="response">Ao seu dispor!</div>
+
+        <p class="footer-info">
+            Node.js • Express • Ollama • Llama 3 • Docker • GitHub Actions
+        </p>
     </div>
 
     <script src="script.js"></script>

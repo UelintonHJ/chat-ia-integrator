@@ -11,7 +11,7 @@ sendButton.addEventListener("click", async () => {
     }
 
     sendButton.disabled = true;
-    responseArea.textContent = "Pensando...";
+    responseArea.textContent = "Pensando... Aguarde, a IA pode levar alguns segundos para responder.";
 
     try {
         const response = await fetch("http://localhost:3000/chat", {
