@@ -6,7 +6,7 @@
 
 body {
     font-family: "Inter", sans-serif;
-    background: linear-gradient(135deg, #1f2937, #111827);
+    background: linear-gradient(135deg, #92400e, #451a03);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,9 +25,22 @@ body {
         0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.llama-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
 h1 {
     text-align: center;
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    background: linear-gradient(90deg, #ea580c, #f59e0b);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -66,8 +79,8 @@ textarea {
 }
 
 textarea:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+    border-color: #ea580c;
+    box-shadow: 0 0 8px rgba(234, 88, 12, 0.25);
     background: #ffffff;
 }
 
@@ -79,18 +92,18 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    background-color: #2563eb;
+    background-color: #ea580c;
     color: white;
     font-size: 16px;
     font-weight: 600;
     transition: 0.2s;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    background-color: #c2410c;
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 8px 18px rgba(234, 88, 12, 0.35);
     letter-spacing: 0.5px;
 }
 
@@ -99,7 +112,7 @@ button:active {
 }
 
 button:disabled {
-    background-color: #93c5fd;
+    background-color: #fdba74;
     cursor: not-allowed;
     transform: none;
 }
@@ -116,7 +129,7 @@ h2 {
     border: 1px solid #e5e7eb;
     padding: 14px;
     border-radius: 10px;
-    background-color: #f9fafb;
+    background-color: #fff7ed;
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
